@@ -1,5 +1,3 @@
-#macro BUILD_VER 1101
-
 // Client stuff
 isConnected = false;
 isReady = false;
@@ -29,15 +27,6 @@ lvlId = -1;
 pings = ds_map_create();
 
 players = ds_map_create();
-avCharacters = 
-[ 
-	false, //0 (exe) (cannot)
-	true,  //1 (tails)
-	true,
-	true,
-	true,
-	true,
-	true
-];
+avCharacters = net_avchars();
 
 depth = -9999999;

@@ -1,1 +1,0 @@
-audio_play_sound(snd_penis, 0, false);

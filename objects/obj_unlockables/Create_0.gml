@@ -91,17 +91,17 @@ save = function()
 			_buffer[? "petPaletteTo"][| i] = petPallettes[? i].to;
 		}
 	
-		for(var i = 0; i < CHARACTER_SALLY; i++)
+		for(var i = 0; i < LATEST_SURV; i++)
 		{
 			_buffer[? "palettes"][? i + 1] = palettes[? i + 1];
 		}
 	
-		for(var i = 0; i < CHARACTER_SALLY; i++)
+		for(var i = 0; i < LATEST_SURV; i++)
 		{
 			_buffer[? "palettes"][? i + PALETTE_DEMON + 1] = palettes[? i + PALETTE_DEMON + 1];
 		}
 	
-		for(var i = 0; i < EXE_EXELLER+1; i++)
+		for(var i = 0; i < LATEST_EXE+1; i++)
 		{
 			_buffer[? "palettes"][? i + PALETTE_EXE] = palettes[? i + PALETTE_EXE];
 		}
@@ -142,7 +142,7 @@ if(!file_exists($"{game_save_id}/2.bson"))
 			_buffer[? "petPaletteTo"][i] = global.petPallettes[i];
 		}
 	
-		for(var i = 0; i < CHARACTER_SALLY; i++)
+		for(var i = 0; i < LATEST_SURV; i++)
 		{
 			_buffer[? "palettes"][? i + 1] = {
 				name: "default",
@@ -155,7 +155,7 @@ if(!file_exists($"{game_save_id}/2.bson"))
 		}
 	
 	
-		for(var i = 0; i < CHARACTER_SALLY; i++)
+		for(var i = 0; i < LATEST_SURV; i++)
 		{
 			_buffer[? "palettes"][? i + PALETTE_DEMON + 1] = {
 				name: "default",
@@ -167,7 +167,7 @@ if(!file_exists($"{game_save_id}/2.bson"))
 			};
 		}
 	
-		for(var i = 0; i < EXE_EXELLER+1; i++)
+		for(var i = 0; i < LATEST_EXE+1; i++)
 		{
 			_buffer[? "palettes"][? i + PALETTE_EXE] = {
 				name: "default",

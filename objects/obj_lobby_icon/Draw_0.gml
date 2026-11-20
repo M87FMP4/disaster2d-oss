@@ -21,12 +21,12 @@ if(obj_lobby.state == 2 && obj_netclient.nid == master_id && !isSelected)
 		if(obj_netclient.exeId == master_id)
 		{
 			if(selected < 1)
-				selected = 4;
+				selected = LATEST_EXE+1;
 		}
 		else
 		{
 			if(selected < 1)
-				selected = 6;
+				selected = LATEST_SURV;
 		}
 			
 		audio_play_sound(snd_menu_select, 0, false);
@@ -38,12 +38,12 @@ if(obj_lobby.state == 2 && obj_netclient.nid == master_id && !isSelected)
 		
 		if(obj_netclient.exeId == master_id)
 		{
-			if(selected > 4)
+			if(selected > LATEST_EXE+1)
 				selected = 1;
 		}
 		else
 		{
-			if(selected > 6)
+			if(selected > LATEST_SURV)
 				selected = 1;
 		}
 			
@@ -70,19 +70,19 @@ if(obj_lobby.state == 2 && obj_netclient.nid == master_id && !isSelected)
 	{		
 		switch(selected)
 		{
-			case 1:
+			case EXE_ORIGINAL:
 				sprite_index = spr_lobby_exeicon;
 				break;
 				
-			case 2:							
+			case EXE_CHAOS:							
 				sprite_index = spr_lobby_exeicon2;
 				break;
 				
-			case 3:
+			case EXE_EXETIOR:
 				sprite_index = spr_lobby_exeicon3;
 				break;
 				
-			case 4:
+			case EXE_EXELLER:
 				sprite_index = spr_lobby_exeicon4;
 				break;
 		}

@@ -1,12 +1,12 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_knux_special",
   "isCompatibility":false,
   "isDnD":false,
   "name":"scr_knux_special",
   "parent":{
-    "name":"Specials",
-    "path":"folders/Scripts/Players/Specials.yy",
+    "name":"Survivors",
+    "path":"folders/Scripts/Players/Specials/Survivors.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

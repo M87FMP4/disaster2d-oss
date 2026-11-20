@@ -78,6 +78,8 @@ function net_tcpprocess(rbuff)
 				if(_passtrough)
 					 break;
 				
+				var type = buffer_read_s(rbuff, buffer_u8);
+				
 				if(type == 9)
 				{
 					isConnected = false;
@@ -162,16 +164,7 @@ function net_tcpprocess(rbuff)
 				players = ds_map_create();
 				exeId = -1;
 				
-				avCharacters = 
-				[ 
-					false, //0 (exe) (cannot)
-					true,  //1 (t)
-					true,
-					true,
-					true,
-					true,
-					true
-				];
+				avCharacters = net_avchars();
 				
 				gameEnds = false;
 				state = STATE_LOBBY;

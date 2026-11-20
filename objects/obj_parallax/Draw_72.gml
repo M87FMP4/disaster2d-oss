@@ -1,11 +1,11 @@
 /*
-	КАК ИСПОЛЬЗОВАТЬ:
-	в коде создания комнаты сделать лист всех слоев и их скоростей:
+	HOW TO USE:
+	in the room creation code, create a list of all layers and their speeds:
 	
-	формат:
-	[ id слоя, х-скорость, у-скорость, y offset (опцианально) ]
+	format:
+	[ id layer, х-speed, у-speed, y offset (optional) ]
 	
-	пример:
+	example:
 	global.parallax = 
 	[
 		[ layer_get_id("Background"), 0.3, 0 ]

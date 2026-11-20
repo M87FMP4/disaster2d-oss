@@ -50,16 +50,7 @@ function net_poll()
 				exeId = 0;
 				chance = 0;
 				lvlId = -1;
-				avCharacters = 
-				[ 
-					false, //0 (exe) (cannot)
-					true,  //1 (tails)
-					true,
-					true,
-					true,
-					true,
-					true
-				];
+				avCharacters = net_avchars();
 		
 				isConnected = true;
 				room_goto(room_waiting);

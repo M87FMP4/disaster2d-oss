@@ -1,17 +1,26 @@
-//if(os_type == os_windows)
-//{
-//	if(!init_multiplayer())
-//		room_goto(room_you_are_failure);
-//}
+#macro BUILD_VER 1101
+#macro LATEST_SURV (CHARACTER_SALLY)
+#macro LATEST_EXE (EXE_EXELLER)
+
+function net_avchars()
+{
+    return
+    [
+        false, // 0 exe
+        true,  // 1 tails
+        true,  // 2 knux
+        true,  // 3 egg
+        true,  // 4 amy
+        true,  // 5 cream
+        true   // 6 sally
+    ];
+}
 
 global.init = false;
-global.score = 0;
 global.player = obj_exe;
 global.playerControls = true;
 global.cameraMode = 0;
-global.lives = 3;
 global.showHud = true;
-global.paused = false;
 global.errorCode = -1;
 global.muteChat = false;
 
@@ -40,31 +49,29 @@ global.KeyHide = vk_lcontrol;
 global.KeyPList = vk_tab;
 global.KeyIdle = ord("W");
 
-#macro MAP_FART 20
-
 global.levels = 
 [
-	{ group: "HideAndSeek2", rid: room_hideandseek2, bg: background_hn2, music: mus_hideandseek2, chaseMusic: mus_hideandseek2_chase },
-	{ group: "RavineMist", rid: room_ravinemist, bg: background_rm, music: mus_ravimemist, chaseMusic: mus_ravimemist_chase },
-	{ group: "DotDotDot", rid: room_dotdotdot, bg: background_dotdotdot, music: mus_dotdotdot, chaseMusic: mus_dotdotdot_chase },
-	{ group: "DesertTown", rid: room_deserttown, bg: background_dt, music: mus_deserttown, chaseMusic: mus_deserttown_chase },
-	{ group: "YouCantRun", rid: room_youcantrun, bg: background_ycr, music: mus_youcantrun, chaseMusic: mus_youcantrun_chase },
-	{ group: "LimpCity", rid: room_limpcity, bg: background_limpcity, music: mus_limpcity, chaseMusic: mus_limpcity_chase },
-	{ group: "NotPerfect", rid: room_notperfect, bg: background_notperf, music: mus_notperfect, chaseMusic: mus_notperfect_chase },
-	{ group: "KindaFair", rid: room_kindandfair, bg: background_knf, music: mus_kindandfair, chaseMusic: mus_kindandfair_chase },
-	{ group: "Act9", rid: room_act9, bg: background_act9, music: mus_act9, chaseMusic: mus_act9_chase },
-	{ group: "NastyParadise", rid: room_nastyparadise, bg: background_nap, music: mus_nastyparadise, chaseMusic: mus_nastyparadise_chase },
-	{ group: "PricelessFreedom", rid: room_pricelessfreedom, bg: background_pf, music: mus_pricelessfreedom, chaseMusic: mus_pricelessfreedom_chase },
-	{ group: "VolcanoValley", rid: room_volcanovalley, bg: background_vv, music: mus_volcanovalley, chaseMusic: mus_volcanovalley_chase },
-	{ group: "Hill", rid: room_greenhill, bg: background_greenhill, music: mus_hill, chaseMusic: mus_hill_chase },
-	{ group: "MajinForest", rid: room_majongforest, bg: background_majong, music: mus_majinforest, chaseMusic: mus_majinforest_chase },
-	{ group: "HideAndSeek", rid: room_angelisland, bg: background_aiz5, music: mus_angelisland, chaseMusic: mus_angelisland_chase },
-	{ group: "TortureCave", rid: room_torturecave, bg: background_am, music: mus_torturecave, chaseMusic: mus_torturecave_chase },
-	{ group: "DarkTower", rid: room_dartower, bg: background_darktower, music: mus_darktower, chaseMusic: mus_darktower_chase },
-	{ group: "HauntDream", rid: room_haundream, bg: background_darktower, music: mus_hauntdream, chaseMusic: mus_hauntdream_chase },
-	{ group: "WoodDream", rid: room_weedzone, bg: background_weed, music: mus_weedzone, chaseMusic: mus_weedzone_chase },
-	{ group: "Marijuna", rid: room_marijuna, bg: background_weed, music: mus_marijuna, chaseMusic: mus_marijuna_chase },
-	{ group: "Fart", rid: room_fartzone, bg: background_test, music: mus_fartzone, chaseMusic: mus_fartzone_chase },
+	{ group: "HideAndSeek2",	 rid: room_hideandseek2,	 music: mus_hideandseek2,	  chaseMusic: mus_hideandseek2_chase		},
+	{ group: "RavineMist",		 rid: room_ravinemist,		 music: mus_ravimemist,		  chaseMusic: mus_ravimemist_chase			},
+	{ group: "DotDotDot",		 rid: room_dotdotdot,		 music: mus_dotdotdot,		  chaseMusic: mus_dotdotdot_chase			},
+	{ group: "DesertTown",		 rid: room_deserttown,		 music: mus_deserttown,		  chaseMusic: mus_deserttown_chase			},
+	{ group: "YouCantRun",		 rid: room_youcantrun,		 music: mus_youcantrun,		  chaseMusic: mus_youcantrun_chase			},
+	{ group: "LimpCity",		 rid: room_limpcity,		 music: mus_limpcity,		  chaseMusic: mus_limpcity_chase			},
+	{ group: "NotPerfect",		 rid: room_notperfect,		 music: mus_notperfect,		  chaseMusic: mus_notperfect_chase			},
+	{ group: "KindaFair",		 rid: room_kindandfair,		 music: mus_kindandfair,	  chaseMusic: mus_kindandfair_chase			},
+	{ group: "Act9",			 rid: room_act9,			 music: mus_act9,			  chaseMusic: mus_act9_chase				},
+	{ group: "NastyParadise",	 rid: room_nastyparadise,	 music: mus_nastyparadise,	  chaseMusic: mus_nastyparadise_chase		},
+	{ group: "PricelessFreedom", rid: room_pricelessfreedom, music: mus_pricelessfreedom, chaseMusic: mus_pricelessfreedom_chase	},
+	{ group: "VolcanoValley",	 rid: room_volcanovalley,	 music: mus_volcanovalley,	  chaseMusic: mus_volcanovalley_chase		},
+	{ group: "Hill",			 rid: room_greenhill,		 music: mus_hill,			  chaseMusic: mus_hill_chase				},
+	{ group: "MajinForest",		 rid: room_majongforest,	 music: mus_majinforest,	  chaseMusic: mus_majinforest_chase			},
+	{ group: "HideAndSeek",		 rid: room_angelisland,		 music: mus_angelisland,	  chaseMusic: mus_angelisland_chase			},
+	{ group: "TortureCave",		 rid: room_torturecave,		 music: mus_torturecave,	  chaseMusic: mus_torturecave_chase			},
+	{ group: "DarkTower",		 rid: room_dartower,		 music: mus_darktower,		  chaseMusic: mus_darktower_chase			},
+	{ group: "HauntDream",		 rid: room_haundream,		 music: mus_hauntdream,		  chaseMusic: mus_hauntdream_chase			},
+	{ group: "WoodDream",		 rid: room_weedzone,		 music: mus_weedzone,		  chaseMusic: mus_weedzone_chase			},
+	{ group: "Marijuna",		 rid: room_marijuna,		 music: mus_marijuna,		  chaseMusic: mus_marijuna_chase			},
+	{ group: "Fart",			 rid: room_fartzone,		 music: mus_fartzone,		  chaseMusic: mus_fartzone_chase			},
 ];
 
 global.levelDescriptions = 

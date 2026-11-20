@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_menu_diff",
   "bboxMode":0,
   "bbox_bottom":184,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4ed02331-c535-4ee9-9cac-dc8af0d3e221","name":"4ed02331-c535-4ee9-9cac-dc8af0d3e221","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"4ed02331-c535-4ee9-9cac-dc8af0d3e221","name":"4ed02331-c535-4ee9-9cac-dc8af0d3e221","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -25,14 +25,14 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Gifs",
-    "path":"folders/Sprites/Main Menu/Gifs.yy",
+    "name":"Game Mechanics",
+    "path":"folders/Sprites/Main Menu/Gifs/Game Mechanics.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
-    "$GMSequence":"",
+    "$GMSequence":"v1",
     "%Name":"spr_menu_diff",
     "autoRecord":true,
     "backdropHeight":768,

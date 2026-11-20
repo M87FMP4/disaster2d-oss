@@ -10,13 +10,6 @@ if(room == room_lobby)
 if(room == room_lobby || room == room_menu)
 	ds_map_clear(pings);
 
-if(lvlId != -1 && room == global.levels[lvlId].rid)
-{
-	draw_texture_flush();
-	texturegroup_load(global.levels[lvlId].group);
-	texturegroup_load("Game");
-}
-
 sendTimeout = 60 * .5;
 udp_timeout = 60 * 5;
 isInit = false;

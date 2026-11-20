@@ -19,14 +19,14 @@ drawPing = function(char, exeCharacter, ping, revival, name, index)
 {	
 	if(char == CHARACTER_EXE)
 	{
-		char += CHARACTER_SALLY;
+		char += LATEST_SURV;
 		char += exeCharacter;
 	}
 	else char--;
 	
 	draw_sprite(spr_tab_entry, char, 480/2, 44 + index * 30);
 	
-	if(char <= CHARACTER_SALLY)
+	if(char <= LATEST_SURV)
 	{
 		if(revival >= 2)
 			draw_sprite(spr_playerhealth_demon, char, 480/2-113 + 1, 43 + index * 30 + 28);

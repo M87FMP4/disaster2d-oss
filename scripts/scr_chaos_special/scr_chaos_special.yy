@@ -1,12 +1,12 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_chaos_special",
   "isCompatibility":false,
   "isDnD":false,
   "name":"scr_chaos_special",
   "parent":{
-    "name":"Specials",
-    "path":"folders/Scripts/Players/Specials.yy",
+    "name":"Exe",
+    "path":"folders/Scripts/Players/Specials/Exe.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

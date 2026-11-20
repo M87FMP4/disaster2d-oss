@@ -1,6 +1,6 @@
 function scr_player_instakill() 
 {
-	if(global.player.isDead) //Нельзя умереть 2 раза :rage:
+	if(global.player.isDead) //can't die 2 times :rage:
 		return;
 		
 	if(obj_netclient.gameEnds)
